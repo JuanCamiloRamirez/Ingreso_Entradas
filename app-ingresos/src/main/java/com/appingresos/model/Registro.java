@@ -1,40 +1,88 @@
 package com.appingresos.model;
 
+import com.appingresos.model.businessException.BusinessException;
+import com.appingresos.model.util.DateUtil;
+import com.appingresos.model.util.DocumentUtil;
+import com.appingresos.model.util.Validator;
+
 import java.util.Date;
+import java.util.List;
 
 public class Registro {
     private int idRegistro;
-    private Date fechaRegistro;
-    private String tipoRegistro;
+    private String documento;
+    private Date fechaEntrada;
+    private Date fechaSalida;
 
+    public static final String FECHA_ENTRADA_REQUERIDA = "La fecha de entrada es requerida";
+    public static final String FECHA_SALIDA_REQUERIDA = "La fecha de salida es requerida";
+    public static final String DOCUMENTO_REQUERIDO = "El documento es requerido" ;
     public Registro() {
         super();
     }
 
-    public static class registroBuilder{
+    public static class RegistroBuilder{
+
         private int idRegistro;
-        private Date fechaRegistro;
-        private String tipoRegistro;
+        private String documento;
+        private Date fechaEntrada;
+        private Date fechaSalida;
 
-        public void setIdRegistro(int idRegistro) {
+        public RegistroBuilder setIdRegistro(int idRegistro) {
             this.idRegistro = idRegistro;
+            return this;
         }
 
-        public void setFechaRegistro(Date fechaRegistro) {
-            this.fechaRegistro = fechaRegistro;
+        public RegistroBuilder setDocumento(String documento) {
+            this.documento = documento;
+            return this;
         }
 
-        public void setTipoRegistro(String tipoRegistro) {
-            this.tipoRegistro = tipoRegistro;
+        public RegistroBuilder setFechaEntrada(Date fechaEntrada) {
+            this.fechaEntrada = fechaEntrada;
+            return this;
         }
 
-        public Registro build(){
+        public RegistroBuilder setFechaSalida(Date fechaSalida) {
+            this.fechaSalida = fechaSalida;
+            return this;
+        }
+
+        public Registro build() throws BusinessException {
             Registro registro = new Registro();
             registro.idRegistro = this.idRegistro;
-            registro.fechaRegistro = this.fechaRegistro;
-            registro.tipoRegistro = this.tipoRegistro;
+            Validator.validarDocumentoNulo(documento,DOCUMENTO_REQUERIDO);
+            Validator.validarDocumentoVacio(documento,DOCUMENTO_REQUERIDO);
+            registro.documento = this.documento;
+            Validator.validarFechaNula(fechaEntrada,FECHA_ENTRADA_REQUERIDA);
+            Validator.validarFechaVacia(fechaEntrada,FECHA_ENTRADA_REQUERIDA);
+            registro.fechaEntrada = this.fechaEntrada;
+            Validator.validarFechaNula(fechaSalida,FECHA_SALIDA_REQUERIDA);
+            Validator.validarFechaVacia(fechaSalida,FECHA_SALIDA_REQUERIDA);
+            registro.fechaSalida = this.fechaSalida;
             return registro;
         }
     }
+
+    public int getIdRegistro() {
+        return idRegistro;
+    }
+
+    public String getDocumento() {
+        return documento;
+    }
+
+    public Date getFechaEntrada() {
+        return fechaEntrada;
+    }
+
+    public Date getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public double calcularHorasLaboradas(){
+        return DateUtil.minutesDiff(fechaEntrada, fechaSalida);
+    }
+
 
 }
