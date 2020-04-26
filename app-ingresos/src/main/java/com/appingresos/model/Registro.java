@@ -2,11 +2,9 @@ package com.appingresos.model;
 
 import com.appingresos.model.businessException.BusinessException;
 import com.appingresos.model.util.DateUtil;
-import com.appingresos.model.util.DocumentUtil;
 import com.appingresos.model.util.Validator;
 
 import java.util.Date;
-import java.util.List;
 
 public class Registro {
     private int idRegistro;
@@ -16,6 +14,7 @@ public class Registro {
 
     public static final String FECHA_ENTRADA_REQUERIDA = "La fecha de entrada es requerida";
     public static final String FECHA_SALIDA_REQUERIDA = "La fecha de salida es requerida";
+    public static final String FECHA_ENTRADA_SALIDA_INVALIDA = "La fecha de entrada es mayor a la de salida o la fecha de salida es menor a la de entrada";
     public static final String DOCUMENTO_REQUERIDO = "El documento es requerido" ;
     public Registro() {
         super();
@@ -83,6 +82,5 @@ public class Registro {
     public double calcularHorasLaboradas(){
         return DateUtil.minutesDiff(fechaEntrada, fechaSalida);
     }
-
 
 }

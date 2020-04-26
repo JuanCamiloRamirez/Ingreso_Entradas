@@ -19,6 +19,7 @@ public class Validator {
         }
     }
 
+
     public static void validarDocumentoNulo(String documento, String mensaje) throws BusinessException {
         if(documento == null){
             throw new BusinessException(mensaje);

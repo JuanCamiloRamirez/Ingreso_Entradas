@@ -3,6 +3,7 @@ package com.appingresos;
 import com.appingresos.model.Registro;
 import com.appingresos.model.businessException.BusinessException;
 import com.appingresos.model.util.DateUtil;
+import com.appingresos.model.util.Validator;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
@@ -72,32 +73,4 @@ public class RegistroTest {
         double valorEsperado= 2;
         Assert.assertEquals(valorEsperado,valorReal,0);
     }
-/*
-    @Test
-    public void mostrarRegistroPorDocumento() throws Exception{
-        DocumentUtil doc = new DocumentUtil();
-        List<Registro> prueba = null;
-        Date fechaEntrada = DateUtil.convertStringToDate("2020-02-18 07:00:00");
-        Date fechaSalida = DateUtil.convertStringToDate("2020-02-18 09:00:00");
-        Registro registro = new Registro.RegistroBuilder()
-                .setIdRegistro(1)
-                .setDocumento("1")
-                .setFechaEntrada(fechaEntrada)
-                .setFechaSalida(fechaSalida)
-                .build();
-        prueba.add(registro);
-        Date fechaEntrada2 = DateUtil.convertStringToDate("2020-02-18 07:00:00");
-        Date fechaSalida2 = DateUtil.convertStringToDate("2020-02-18 09:00:00");
-        Registro registro2 = new Registro.RegistroBuilder()
-                .setIdRegistro(2)
-                .setDocumento("2")
-                .setFechaEntrada(fechaEntrada)
-                .setFechaSalida(fechaSalida)
-                .build();
-        prueba.add(registro2);
-        Registro registroReal = doc.consultarRegistrosPorDocumento(prueba,registro.getDocumento());
-        Registro registroEsperado = registro;
-        Assert.assertArrayEquals(registro,registroReal);
-    }
-*/
 }

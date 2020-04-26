@@ -27,6 +27,16 @@ public class DateUtil {
         return date;
     }
 
+    public static boolean validatorDate(Date fechaEntrada, Date fechaSalida){
+        boolean retorno = true;
+        if( fechaEntrada == null || fechaSalida == null ) retorno = false;
+
+        if(fechaEntrada.getTime() > fechaSalida.getTime() ||  fechaSalida.getTime() < fechaEntrada.getTime() ){
+            retorno = false;
+        }
+        return retorno;
+    }
+
 
     public static double minutesDiff(Date earlierDate, Date laterDate)
     {
