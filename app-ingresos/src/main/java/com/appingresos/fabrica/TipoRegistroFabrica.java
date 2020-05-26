@@ -26,4 +26,11 @@ public class TipoRegistroFabrica {
         return registroCommand;
     }
 
+    public RegistroEntity commandToEntity(RegistroCommand registroCommand) {
+        RegistroEntity registroEntity = new RegistroEntity();
+        registroEntity.setDocumento(registroCommand.getDocumento());
+        registroEntity.setFechaEntrada(registroCommand.getFechaEntrada());
+        registroEntity.setFechaSalida(registroCommand.getFechaSalida());
+        return registroEntity;
+    }
 }

@@ -1,5 +1,7 @@
 package com.appingresos.model.util;
 
+import org.springframework.stereotype.Component;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +17,11 @@ public class DateUtil {
         return dateFormat.format(date);
     }
 
+    public static  final String convertDateToString(Date date){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        String fechaComoString = sdf.format(date);
+        return fechaComoString;
+    }
 
     public static final Date convertStringToDate(String stringDate) {
         Date date = null;

@@ -3,11 +3,7 @@ package com.appingresos.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Date;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -16,12 +12,15 @@ import java.util.Date;
 public class RegistroEntity {
 
     @Id
+    @GeneratedValue
     @Column( name = "idRegistro")
     private int idRegistro;
     @Column( name = "documento")
     private String documento;
     @Column( name = "fechaEntrada")
-    private Date fechaEntrada;
+    private String fechaEntrada;
     @Column( name = "fechaSalida")
-    private Date fechaSalida;
+    private String fechaSalida;
+    @Column( name = "finalizado")
+    private boolean finalizado;
 }

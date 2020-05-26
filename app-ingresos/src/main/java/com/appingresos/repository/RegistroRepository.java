@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegistroRepository extends JpaRepository<RegistroEntity,Integer> {
+    RegistroEntity findByDocumento(String documento);
 }

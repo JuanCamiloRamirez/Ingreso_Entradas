@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>REGISTROS</h3>
+        </div>
+        <div class="card-body">
+
+            <div class="row">
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>documento</td>
+                            <td>FECHA ENTRADA</td>
+                            <td>FECHA SALIDA</td>
+                            <td>FINALIZADO</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let registro of registros">
+                            <th>{{registro.idRegistro}}</th>
+                            <th>{{registro.documento}}</th>
+                            <th>{{registro.fechaEntrada}}</th>
+                            <th>{{registro.fechaSalida}}</th>
+                            <th>{{registro.finalizado}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

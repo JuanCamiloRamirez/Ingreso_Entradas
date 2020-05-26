@@ -9,4 +9,5 @@ public interface PersonaService {
 
     List<PersonaCommand> findAll();
 
+    void registrarPersona(PersonaCommand personaCommand);
 }

@@ -3,12 +3,11 @@ package com.appingresos.controller;
 import com.appingresos.command.PersonaCommand;
 import com.appingresos.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost")
 @RestController
 @RequestMapping("/persona")
 public class PersonaController {
@@ -18,8 +17,11 @@ public class PersonaController {
 
     @GetMapping("/v1/listado-personas")
     public List<PersonaCommand> findAll() {
-
         return personaService.findAll();
     }
 
+    @PostMapping("/registro-persona")
+    public void registrarPersona(@RequestBody PersonaCommand personaCommand){
+          personaService.registrarPersona(personaCommand);
+    }
 }

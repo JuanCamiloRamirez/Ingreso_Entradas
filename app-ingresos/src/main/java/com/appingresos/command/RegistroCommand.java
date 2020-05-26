@@ -1,10 +1,10 @@
 package com.appingresos.command;
 
-import java.util.Date;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
+
 
 
 @Data
@@ -14,7 +14,8 @@ public class RegistroCommand {
 
 	private int idRegistro;
     private String documento;
-    private Date fechaEntrada;
-    private Date fechaSalida;
+    private String fechaEntrada;
+    private String fechaSalida;
+    private boolean finalizado;
 	
 }

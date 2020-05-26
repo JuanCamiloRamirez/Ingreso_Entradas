@@ -27,4 +27,14 @@ public class TipoPersonaFabrica {
         return personaCommand;
     }
 
+    public PersonaEntity commandToEntity(PersonaCommand personaCommand){
+        PersonaEntity personaEntity = new PersonaEntity();
+        personaEntity.setNombre(personaCommand.getNombre());
+        personaEntity.setApellido(personaCommand.getApellido());
+        personaEntity.setTipoDocumento(personaCommand.getTipoDocumento());
+        personaEntity.setNumeroDocumento(personaCommand.getNumeroDocumento());
+        personaEntity.setCargo(personaCommand.getCargo());
+        return personaEntity;
+    }
+
 }
