@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div class="nav-color">
+        <nav class="navbar">
+            <div class="navbar-header">
+                <ul class="nav">
+                    <li>
+                        <button (click)="CrearRegistro()" class="btn btn-nav">PORTERÍA</button>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav">
+                <li>
+                    <button (click)="ListarRegistros()" class="btn btn-nav">Registros</button>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li>
+                    <button (click)="ListarPersonas()" class="btn btn-nav">Personas</button>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li>
+                    <button class="btn btn-nav">Ingresar</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+</body>
+
+</html>

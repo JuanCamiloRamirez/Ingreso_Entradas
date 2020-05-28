@@ -1,0 +1,69 @@
+<!-- <body>
+    <div class="body-per">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>¡Bienvenido!</h3>
+                </div>
+                <div class="card-body">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Número de Documento</label>
+                            <input [(ngModel)]="registro.documento" name="documento" id="documento" type="text" placeholder="Número de Documento" class="form-control " autofocus="autofocus">
+                        </div>
+                        <button type="submit " (click)="crearRegistro(registro)" class="btn btn-registrar">
+                            Registrar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> -->
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form action="" class="login100-form validate-form">
+
+                    <table id="reloj" border='0'>
+                        <tr>
+                            <td>
+                                <div id="hora"></div>
+                            </td>
+                            <td>
+                                <div>:</div>
+                            </td>
+                            <td>
+                                <div id='minuto'></div>
+                            </td>
+                            <td>
+                                <div>:</div>
+                            </td>
+                            <td>
+                                <div id='segundo'></div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <span class="login100-form-title p-b-26">
+                        ¡BIENVENIDO! <h2>{{personaIngresando}}</h2> 
+                    </span>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" name="documento" id="documento" [(ngModel)]="registro.documento">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="submit" class="login100-form-btn" (click)="crearRegistro(registro)">
+                                Registrar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

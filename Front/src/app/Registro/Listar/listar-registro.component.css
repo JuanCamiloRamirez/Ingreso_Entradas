@@ -1,0 +1,40 @@
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    border: none;
+}
+
+.card-header {
+    background-color: #2f8e97;
+    color: white;
+}
+
+.table-header {
+    background: #2f8e97;
+    color: white;
+    text-align: center;
+}
+
+.table-body {
+    background: #dbeef4;
+    text-align: center;
+}
+
+
+/*----------------------PAGINATION--------------------------------------------------*/
+
+.pagination {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*--------------GENERALIDADES DE LA PÁGINA------------------------------------------*/
+
+.alinear-al-centro {
+    text-align: center;
+}

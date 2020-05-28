@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="alinear-al-centro title-color">REGISTROS</h3>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <table class="table table-hover table-bordered">
+                    <thead class="table-header">
+                        <tr>
+                            <th>DOCUMENTO</th>
+                            <th>FECHA ENTRADA</th>
+                            <th>FECHA SALIDA</th>
+                            <th>FINALIZADO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr *ngFor="let registro of registros | paginate: { itemsPerPage: 8, currentPage: pageActual }; let i = index">
+                            <td>{{registro.documento}}</td>
+                            <td>{{registro.fechaEntrada}}</td>
+                            <td>{{registro.fechaSalida}}</td>
+                            <td>
+                                <ng-container *ngIf="registro.finalizado == 1; else elseTemplate">
+                                    Si
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    No
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls class="pagination" (pageChange)="pageActual = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

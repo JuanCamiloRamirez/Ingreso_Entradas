@@ -1,0 +1,90 @@
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    border: none;
+}
+
+.card-header {
+    padding-top: 10px;
+}
+
+.btn-registrar-persona {
+    background: #2f8e97;
+    color: white;
+    margin-top: 10px;
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-header {
+    background: #2f8e97;
+    color: white;
+    text-align: center;
+}
+
+.table-body {
+    background: #dbeef4;
+    text-align: center;
+}
+
+.btn-editar {
+    background: #2f8e97;
+    color: white;
+    width: 85px;
+    height: auto;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.btn-eliminar {
+    margin-bottom: 5px;
+    width: 85px;
+    height: auto;
+}
+
+
+/*-----------------------------------MODAL------------------------------------------*/
+
+.modal-header {
+    background-color: #2f8e97;
+    ;
+}
+
+.modal-title {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.modal-footer {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-registrar-modal {
+    background: #2f8e97;
+    color: white;
+}
+
+
+/*---------------------------------PAGINATION---------------------------------------*/
+
+.pagination {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2f8e97;
+}
+
+
+/*--------------GENERALIDADES DE LA PÁGINA------------------------------------------*/
+
+.alinear-al-centro {
+    text-align: center;
+}
